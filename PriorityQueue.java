@@ -2,10 +2,10 @@ public interface PriorityQueue {
 
     public boolean isEmpty();
 
-    public void add(int x);
+    public void add(String x);
 
-    public int removeMin();
+    public String removeMin();
 
-    public int peekMin();
+    public String peekMin();
 
 }

@@ -1,142 +1,62 @@
-/*
-
-  Team SpiderGeckos - Xing Tao Shi, Taylor Wong
-  APCS2 pd4
-  HW32 -- Getting Past the Velver Rope
-  2017-4-19
-
- */
+//Team HelpDesk
+//Taylor Wong, Xing Tao, James Zhang
+//APCS2 pd4
+//Lab03
+//2017-04-19
 
 import java.util.ArrayList;
 
+
 public class ArrayPriorityQueue implements PriorityQueue {
 
-    private ArrayList<Integer> ALPQ
-;
-    public ArrayPriorityQueue () {
+    private ArrayList<String> _data;
 
-	ALPQ = new ArrayList<Integer>();
+    public ArrayPriorityQueue() {
+	_data = new ArrayList<String>();
+    }
 
+    public int getPriority(String s) {
+	return (int)s.charAt(0);
     }
     
-    public boolean isEmpty() {
-
-        return ALPQ.size() == 0;
-
-    }
-
-    public void add(int input) {
-
-	if ( isEmpty() ) {
-
-	    ALPQ.add(input);
-	    return;
-	    
+    public void add(String s) {
+	int i = _data.size() - 1;
+	while (i >= 0 && getPriority(s) > getPriority(_data.get(i))) {
+	    i--;
 	}
-
-	else if ( ALPQ.size() == 1 ) {
-
-	    if (input > ALPQ.get(0)) {
-
-		ALPQ.add(0, input);
-		
-	    }
-	    
-	    else {
-
-		ALPQ.add(input);
-		
-	    }
-
-	}
-	
-	else {
-
-	    for (int x = 0; x < ALPQ.size() - 1; x++) {
-
-		if (input < ALPQ.get(x) && input > ALPQ.get(x + 1)) {
-		    ALPQ.add(x + 1, input);
-		    return;
-		}
-
-		else if (input == ALPQ.get(x)) {
-		    ALPQ.add(x, input);
-		    return;
-		}
-			
-	    }
-
-	    ALPQ.add(input);
-	    return;
-	    
-	}
-	
+	_data.add(i + 1, s);
     }
 
-    public int removeMin() {
-
-	return ALPQ.remove(ALPQ.size() - 1);
-	
+    public boolean isEmpty(){
+	return _data.size() == 0;
     }
 
-    public int peekMin() {
-
-	return ALPQ.get(ALPQ.size() - 1);
-	
+    public String peekMin(){
+	return _data.get(0);
     }
 
-    public String toString() {
-	
-	String retStr = "";
-
-	for (int x = 0; x < ALPQ.size(); x++) {
-
-	    retStr += ALPQ.get(x);
-	    
-	}
-
-	return retStr;
-
-    }
-	
-
-    public static void main(String[] args) {
-
-	ArrayPriorityQueue tester = new ArrayPriorityQueue();
-
-	tester.add(1);
-	System.out.println(tester);
-	tester.add(2);
-	System.out.println(tester);
-	tester.add(0);
-	System.out.println(tester);
-	tester.add(1);
-	System.out.println(tester);
-	tester.add(2);
-	System.out.println(tester);
-
-	System.out.println(tester.peekMin());
-	System.out.println(tester.removeMin());
-	System.out.println(tester);
-	
-	System.out.println(tester.peekMin());
-	System.out.println(tester.removeMin());
-	System.out.println(tester);
-	
-	System.out.println(tester.peekMin());
-	System.out.println(tester.removeMin());
-	System.out.println(tester);
-	
-	System.out.println(tester.peekMin());
-	System.out.println(tester.removeMin());
-	System.out.println(tester);
-	
-	System.out.println(tester.peekMin());
-	System.out.println(tester.removeMin());
-	System.out.println("SHOULD BE EMPTY");
-	System.out.println(tester);
-        
-	
+    public String removeMin(){
+	return _data.remove(0);
     }
 
+    public String toString(){
+	return _data.toString();
+    }
+
+    public static void main(String[] args){
+
+	ArrayPriorityQueue APQ = new ArrayPriorityQueue();
+	APQ.add("2popsicle");	
+	System.out.println(APQ);
+	APQ.add("1ice cream");
+	System.out.println(APQ);
+	APQ.add("3sundae");
+	System.out.println(APQ);
+	APQ.add("3milkshake");
+	System.out.println(APQ);
+	System.out.println(APQ.removeMin());
+	System.out.println(APQ);
+    }
+    
 }
+
