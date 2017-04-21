@@ -33,12 +33,16 @@ public class Ticket {
     }
     
     //mutators
-    //should we return old or new vals for the mutators?
-    public void setSolved(boolean newSolved) {
-          solved = newSolved;
+    public boolean setSolved(boolean newSolved) {
+        boolean old = solved;
+	solved = newSolved;
+	return old;
     }
     
-    public void setSolution(String newSolution) {
-        solution = newSolution;   
+    public String setSolution(String newSolution) {
+        String old = solution;
+	solution = newSolution;   
+	return old;
     }
+
 }
