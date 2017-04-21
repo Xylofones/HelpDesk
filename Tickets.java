@@ -7,6 +7,7 @@ public class Ticket {
     private String solution;
     private boolean solved;
     
+    //accessors
     public int getVIPLevel() {
         return VIPLevel;
     }
@@ -29,5 +30,15 @@ public class Ticket {
     
     public boolean isSolved() {
         return solved;   
+    }
+    
+    //mutators
+    //should we return old or new vals for the mutators?
+    public void setSolved(boolean newSolved) {
+          solved = newSolved;
+    }
+    
+    public void setSolution(String newSolution) {
+        solution = newSolution;   
     }
 }
