@@ -16,7 +16,35 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
     }
     
     public void add(T s){
+	
+	if ( isEmpty() ) {
+	    _data.add(s);
+	    return;
+	}
 
+	else if ( _data.size() == 1 ) {
+	    if (s > _data.get(0)) {
+		_data.add(0, s);
+	    }
+	    else {
+		_data.add(s);
+	    }
+	}
+	else {
+	    for (int x = 0; x < _data.size() - 1; x++) {
+		if (s < _data.get(x) && s > _data.get(x + 1)) {
+		    _data.add(x + 1, s);
+		    return;
+		}
+
+		else if (s == _data.get(x)) {
+		    _data.add(x, s);
+		    return;
+		}		    
+	    }
+	    _data.add(s);
+	    return;
+	}
     }
 
     public boolean isEmpty(){
