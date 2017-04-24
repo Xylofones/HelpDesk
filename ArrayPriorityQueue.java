@@ -7,35 +7,27 @@
 import java.util.ArrayList;
 
 
-public class ArrayPriorityQueue implements PriorityQueue {
+public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
 
-    private ArrayList<String> _data;
+    private ArrayList<T> _data;
 
     public ArrayPriorityQueue() {
-	_data = new ArrayList<String>();
-    }
-
-    public int getPriority(String s) {
-	return (int)s.charAt(0);
+	_data = new ArrayList<T>();
     }
     
-    public void add(String s) {
-	int i = _data.size() - 1;
-	while (i >= 0 && getPriority(s) > getPriority(_data.get(i))) {
-	    i--;
-	}
-	_data.add(i + 1, s);
+    public void add(T s){
+
     }
 
     public boolean isEmpty(){
 	return _data.size() == 0;
     }
 
-    public String peekMin(){
+    public T peekMin(){
 	return _data.get(0);
     }
 
-    public String removeMin(){
+    public T removeMin(){
 	return _data.remove(0);
     }
 

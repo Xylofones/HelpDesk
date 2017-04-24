@@ -1,11 +1,11 @@
-public interface PriorityQueue {
+public interface PriorityQueue<T> {
 
     public boolean isEmpty();
 
-    public void add(String x);
+    public void add(T x);
 
-    public String removeMin();
+    public T removeMin();
 
-    public String peekMin();
+    public T peekMin();
 
 }
