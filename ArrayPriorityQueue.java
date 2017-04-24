@@ -23,7 +23,7 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
 	}
 
 	else if ( _data.size() == 1 ) {
-	    if (s > _data.get(0)) {
+	    if (((Comparable)s).compareTo(_data.get(0)) > 0) {
 		_data.add(0, s);
 	    }
 	    else {
@@ -32,7 +32,7 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
 	}
 	else {
 	    for (int x = 0; x < _data.size() - 1; x++) {
-		if (s < _data.get(x) && s > _data.get(x + 1)) {
+		if (((Comparable)s).compareTo(_data.get(x)) < 0 && ((Comparable)s).compareTo(_data.get(x + 1)) > 0) {
 		    _data.add(x + 1, s);
 		    return;
 		}

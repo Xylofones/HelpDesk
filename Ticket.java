@@ -77,6 +77,11 @@ public class Ticket implements Comparable<Ticket> {
 	return old;
     }
 
+    public String toString() {
+	return this.custName;
+    }
+    
+    //TESTING TICKET
     /*
     public static void main (String[] args) {
 	
@@ -86,4 +91,22 @@ public class Ticket implements Comparable<Ticket> {
  
     }
     */
+
+    //TESTING ARRAYPRIORITYQUEUE
+    public static void main (String[] args) {
+
+	ArrayPriorityQueue<Ticket> xing = new ArrayPriorityQueue<Ticket>();
+	Ticket james = new Ticket(100, 0, "im stressed", "james");
+	Ticket taylor = new Ticket(0, 0, "im stressed", "taylor");
+	Ticket brown = new Ticket(0, 0, "im stressed", "brown");
+
+	xing.add(james);
+	xing.add(taylor);
+	xing.add(brown);
+
+	System.out.println(xing);
+	xing.removeMin();
+	System.out.println(xing);
+
+    }
 }
