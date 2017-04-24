@@ -6,7 +6,7 @@ DESIGN:
 
 <h2>
 Ticket
-<h2>
+</h2>
 
 <p>
 Contains the attriubtes VIPLevel, ID, problem, custName, solution, and solved. Tickets are Comparable so that they can be compared with other Tickets to see which one has higher priority, and therefore determines where it falls in the queue. Also contains accessor methods for each variable and mutators for solved and solution variables (as these will need to be changed once ticket problems have been solved).
