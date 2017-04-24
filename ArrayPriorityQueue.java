@@ -59,6 +59,10 @@ public class ArrayPriorityQueue<T> implements PriorityQueue<T> {
 	return _data.remove(0);
     }
 
+    public int size() {
+	return _data.size();
+    }	    
+    
     public String toString(){
 	return _data.toString();
     }

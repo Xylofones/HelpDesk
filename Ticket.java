@@ -65,10 +65,9 @@ public class Ticket implements Comparable<Ticket> {
     }
     
     //mutators
-    public boolean setSolved(boolean newSolved) {
-        boolean old = solved;
-	solved = newSolved;
-	return old;
+    public boolean setSolved() {
+	solved = true;
+	return false;
     }
     
     public String setSolution(String newSolution) {
