@@ -7,7 +7,7 @@ Xing Tao Shi, Taylor Wong, and James Zhang
 </h2>
 
 <h2>
-DESIGN:
+DESIGN
 </h2>
 
 <h3>
@@ -31,7 +31,7 @@ HelpDesk
 Contains an ArrayPriorityQueue customers, a currID (which handles which Ticket number is being served), answers (which is a set of generic answers given to solve the problems of customers), and previouslySolved (an ArrayList of type Solved which keeps track previously solved problems). The addTicket method adds a ticket to the queue; and the solveTicket method solves the ticket, removes the ticket form the queue, and returns the solution. The toString method simply converts customer queue into a string.
 
 <h2>
-Pizzazz
+PIZZAZZ
 </h2>
 
 <h3>
