@@ -14,7 +14,11 @@ public class HelpDesk {
     
     public String solveTicket() {
     
-        
+        String sol = answers[(int)(Math.random()*answers.length)];
+        customers.peekMin().solved = true;
+        customers.peekMin().solution = sol;
+        customers.removeMin();
+        return sol;
         
     }
     
