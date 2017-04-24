@@ -29,3 +29,9 @@ HelpDesk
 </h3>
 
 Contains an ArrayPriorityQueue customers, a currID (which handles which Ticket number is being served), and answers (which is a set of generic answers given to solve the problems of customers. The addTicket method adds a ticket to the queue; and the solveTicket method solves the ticket, removes the ticket form the queue, and returns the solution.
+
+<h3>
+Embelishments
+</h3>
+
+Created a new class called Solved that helps keep track of previously solved requests. Using this new class, we created an ArrayList in HelpDesk which kept track of previous solutions. We then added onto our add method so that if a problem had been previously solved, instead of being enqueued into the ArrayPriorityList, it would simply be filtered out and the customer would be given the previous solution.
