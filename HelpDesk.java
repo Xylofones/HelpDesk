@@ -31,7 +31,7 @@ public class HelpDesk {
 	}
 	
 	customers.add(newTicket);
-	System.out.println(custName + " needs help!");
+	System.out.println(custName + "'s ticket has been added. His ID is " + currID + ".");
         
     }
     
@@ -70,6 +70,46 @@ public class HelpDesk {
 	*/
 
 	//CLI
+	HelpDesk xing = new HelpDesk();
+	
+	int newVIPLevel;
+	int choice;
+	String newProblem;
+	String newCustName;
+	boolean open = true;
+	
+	while(open){
+	    System.out.println("Please enter your VIPLevel where 0 is the highest");
+	    newVIPLevel = Keyboard.readInt();
+	    System.out.println("Please enter your problem");
+	    newProblem = Keyboard.readString();
+	    System.out.println("Please enter your name");
+	    newCustName = Keyboard.readString();
+	    xing.addTicket(newVIPLevel, newProblem, newCustName);
+
+	    System.out.println("Would you like to solve a ticket, add another ticket, or stop here?");
+	    System.out.println("Insert 1 for solve and then add another one");
+	    System.out.println("Insert 2 for add");
+	    System.out.println("Insert 3 for stop");
+	    choice = Keyboard.readInt();
+
+	    if (choice == 1) {
+		System.out.println("The next problem is about to be solved");
+		System.out.println("WOW WE FOUND A SOLUTION. It is:");
+		System.out.println("\t" + xing.solveTicket());
+		System.out.println("He has been removed from our list of customers.");
+	    }
+	    else if (choice == 2) {
+
+	    }
+	    else {
+		open = false;
+	    }
+	    
+	
+	}
+	System.out.println("We are now closed");
+	
     }
     
 }
