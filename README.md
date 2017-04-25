@@ -18,7 +18,7 @@ Contains the attriubtes VIPLevel, ID, problem, custName, solution, and solved. T
 
 
 <h3>
-ArrayPriority Queue implementing PriorityQueue
+ArrayPriorityQueue implementing PriorityQueue
 </h3>
 
 Uses an ArrayList as the container to hold the Tickets which need to be solved. Methods include add (add Ticket), isEmpty, peekMin, removeMin, and toString-- all of which are generically typed (except toString which has to return a String).
@@ -29,6 +29,10 @@ HelpDesk
 </h3>
 
 Contains an ArrayPriorityQueue customers, a currID (which handles which Ticket number is being served), answers (which is a set of generic answers given to solve the problems of customers), and previouslySolved (an ArrayList of type Solved which keeps track previously solved problems). The addTicket method adds a ticket to the queue; and the solveTicket method solves the ticket, removes the ticket form the queue, and returns the solution. The toString method simply converts customer queue into a string.
+
+<br>
+
+UPDATE: adjusted HelpDesk to accommodate Command Line Input, using new variables newVIPLevel, choice, newProblem, newCustName, and open. Simply reads command line input and creates a new Ticket to add to the queue based on information given.
 
 <h2>
 PIZZAZZ
